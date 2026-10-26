@@ -1,0 +1,321 @@
+
+=== PAGE 1 ===
+I recommend a project that predicts parking availability 30 minutes ahead using
+Singapore’s HDB data, with automated retraining every three days. It has a
+practical use case, accessible historical and live data, automatically generated
+training labels, and an Azure architecture that can fit the student credit with
+controlled compute usage.
+Suggested title: “Prediksi Ketersediaan Parkir Berbasis Lakehouse dan
+Retraining Otomatis pada Microsoft Azure.”
+I checked your project specification in Overview, page 10, and the signed RPS,
+particularly pages 15–20. The recommendation below covers their ten required
+architecture components.
+The strongest candidates are:
+Idea
+Data source
+Suitability for three-
+day retraining
+Main consideration
+Parking
+availability
+prediction —
+recommended
+Singapore HDB
+availability API and
+carpark metadata
+Frequent
+observations provide
+new labels
+automatically;
+historical queries
+support initial training
+Requires careful
+handling of stale
+observations and
+missing timestamps
+Bike-station
+availability
+prediction
+Citi Bike GBFS feeds
+and trip histories
+Live station
+snapshots provide
+new availability labels
+Published trip histories
+and station availability
+are different datasets;
+you must collect
+availability history
+Indonesian
+Wikipedia
+readership
+forecasting
+Wikimedia pageview
+API, using
+id.wikipedia.org
+Daily pageview
+counts provide new
+labels
+Easier data
+engineering, but daily
+data gives a less
+compelling streaming
+demonstration
+My preference for parking comes from its data access and its natural connection
+between ingestion, analytics, prediction, and monitoring.
+The application would answer: “How many car spaces are likely to remain
+available at this carpark when I arrive in 30 minutes?” Its dashboard could show
+Untitled
+1
+
+=== PAGE 2 ===
+current availability, predicted availability, recurring busy periods, and prediction
+errors by carpark.
+The data is usable now. I tested the official API through its documentation
+interface:
+The latest-data request returned HTTP 200.
+A historical request for 1 August 2026 at 12:00 SGT also returned HTTP 200,
+with an observation timestamp of approximately 11:59.
+The responses contained carpark identifiers, observation times, lot types, total
+lots, and available lots.
+The documentation specifies minute-level updates, historical retrieval through 
+date_time , and optional API-key authentication. The dataset is available under
+Singapore’s Open Data Licence. HDB availability documentation
+Use these two sources:
+Source
+Information obtained
+Purpose
+Carpark
+Availability
+Carpark ID, timestamp, lot type,
+capacity, available lots
+Historical training data, live
+inputs, and subsequent actual
+outcomes
+HDB Carpark
+Information
+Address, coordinates, carpark
+type, parking system, operating
+information
+Metadata joins, explanatory
+features, and mapping
+The metadata coordinates use SVY21, so convert them before displaying a
+latitude/longitude map. Also, the metadata catalogue includes carparks that may
+not appear in the availability feed; select the study locations from their
+intersection.
+For a manageable scope, start with 200 carparks, car lots only, sampled every
+five minutes. The expected volume is:
+200×12×24×3=172,800 observations per three days200 \times 12 \times 24 \times
+3 = 172{,}800\text{ observations per three days}
+That comfortably targets the brief’s 100,000-record requirement. Verify the final
+count after removing duplicates and invalid observations. Backfill approximately 
+four weeks initially so the first model has weekday and weekend patterns to learn.
+Untitled
+2
+
+=== PAGE 3 ===
+Fetch the system-wide snapshot once per interval, then extract the selected
+carparks. This keeps API traffic small. Use bounded retries and backoff for
+failures; the published rate-limit table specifically covers v2 APIs, so do not
+automatically apply its numerical limits to this v1 endpoint. API access guidance
+For Azure, I would use the following implementation:
+Required component
+Proposed implementation
+1. Data ingestion
+Python Azure Function collects snapshots every five minutes; a
+separate backfill process requests historical timestamps
+2. ADLS Gen2 with
+partitions
+Store raw snapshots in Bronze, partitioned by date; maintain
+cleaned Silver and analytical Gold layers
+3. Distributed
+processing
+Synapse Spark/PySpark cleans, deduplicates, joins metadata,
+builds features, and writes Delta tables
+4. Query and analytics
+Synapse serverless SQL queries published Gold datasets
+5. ML, inference API,
+retraining
+CPU-based regression model; HTTP Azure Function serves
+predictions; Synapse pipeline retrains every three days
+6. Dashboard
+Power BI Desktop connected to the analytical datasets
+7. Security and cost
+management
+Managed identities, restricted storage RBAC, private containers,
+budget alerts, and cost records
+8. VS Code integration
+Develop, debug, and deploy the Python code from VS Code
+9. CI/CD
+GitHub Actions validates code and deploys changes; Bicep
+records infrastructure configuration
+10. MLOps evidence
+Versioned models and data references, recorded metrics,
+retraining history, deployment decisions, and prediction
+monitoring
+Spark must remain part of the implementation, because distributed processing is
+explicitly required. A Python-only pipeline using pandas would leave that
+requirement unfulfilled.
+The overall data flow would be:
+Untitled
+3
+
+=== PAGE 4 ===
+HDB APIs
+Python collector
+ADLS Bronze
+Latest feature cache
+Synapse Spark
+Three-day schedule
+Delta tables and Gold 
+datasets
+Serverless SQL
+Power BI dashboard
+Training and evaluation
+Versioned model
+Inference API
+For SQL compatibility, publish a Parquet Gold snapshot from the cleaned Delta
+tables. Synapse serverless SQL supports an older Delta feature set, which can
+cause compatibility problems with newer table features. Microsoft’s Delta support
+documentation
+There is one distinction in your documents: the main specification permits batch 
+and/or streaming, while the broader rubric assigns marks to streaming. I would
+therefore include a working Spark Structured Streaming demonstration over
+arriving snapshot files, with event-time windows, checkpoints, and duplicate
+handling. Run it during scheduled demonstrations and validation sessions, then
+release the compute. Document the routine five-minute collection honestly as
+periodic polling.
+Event Hubs is unnecessary for this initial architecture. If you later add it, note that 
+Event Hubs Basic does not support Capture, although that combination appears
+in the lab instructions. Event Hubs feature comparison
+The ML task should stay focused:
+Untitled
+4
+
+=== PAGE 5 ===
+Item
+Initial choice
+Prediction
+target
+Available car spaces 30 minutes ahead
+Baseline
+Current availability carried forward
+Main model
+A compact gradient-boosted tree regressor, such as scikit-learn’s
+histogram gradient boosting
+Features
+Current availability, recent changes, lagged observations, rolling
+averages, hour, weekday, capacity, and carpark characteristics
+Evaluation
+MAE in parking spaces, plus error relative to capacity
+Training
+window
+Approximately the latest four weeks, with the most recent period
+reserved for validation
+Use chronological evaluation. Randomly splitting adjacent observations would
+make the results look better than they are. Match labels by timestamp, handle
+missing intervals explicitly, and build features only from information available
+when the prediction was made.
+Every prediction acquires its label when the observation approximately 30 minutes
+later arrives. No manual annotation is needed. This is the main reason the
+retraining requirement fits this topic well.
+The automated retraining cycle would be:
+1. Process observations collected since the previous run.
+2. Validate freshness, coverage, duplicates, and capacity values.
+3. Construct features and matured labels.
+4. Train a candidate using the rolling historical window.
+5. Compare it with the baseline and deployed model on withheld recent data.
+6. Save the model, metrics, training window, data references, and Git commit.
+7. Promote it when it passes the evaluation criteria; otherwise keep the existing
+deployed model and record why.
+Retraining happens every three days; replacing the deployed model depends on
+the evaluation.
+Untitled
+5
+
+=== PAGE 6 ===
+Use a Synapse pipeline schedule with frequency: Day , interval: 3 , and UTC. This
+expresses an actual three-day recurrence. A cron expression using */3 in the
+day-of-month field can produce uneven gaps at month boundaries. Azure pipeline
+scheduling
+For languages, Python and SQL are sufficient. Python covers collection, PySpark
+processing, model training, and inference; SQL covers analytics. Add DAX where
+the dashboard needs it. An optional web interface could use TypeScript and Azure
+Static Web Apps, but Power BI plus the inference API already covers the required
+deliverables.
+The financial constraint is manageable, provided compute runs for bounded
+periods. Azure for Students currently provides $100 usable within 12 months,
+rather than a fresh $100 each semester. Available credit and service quotas must
+be checked in your actual subscription. Azure for Students
+I retrieved these Southeast Asia retail rates:
+Service
+Retrieved USD rate
+Synapse memory-optimized Spark
+$0.15456 per vCore-hour
+Synapse serverless SQL
+$6.75 per TB processed
+ADLS Gen2 Hot LRS storage
+$0.02 per GB-month, plus operations
+These are retail rates, before any applicable free allowance or subscription-
+specific treatment. Synapse regional price query, Storage regional price query
+The smallest Synapse Spark configuration has three nodes with four vCores
+each. For a 90-day project, assuming 30 scheduled runs and 20 billed minutes
+per run:
+30×2060×12×$0.15456=$18.5530 \times \frac{20}{60} \times 12 \times \$0.15456
+= \$18.55
+The runtime is a planning assumption that must be measured with the first
+complete job. Spark pool configuration
+A reasonable planning budget is:
+Expense over approximately 90 days
+Estimate or allowance
+Scheduled processing and retraining
+$18.55 under the assumption above
+Untitled
+6
+
+=== PAGE 7 ===
+Expense over approximately 90 days
+Estimate or allowance
+Backfill, development, and streaming demonstrations
+$15–25
+Storage and storage operations
+$1–4
+Functions for collection and inference
+$3–10
+SQL queries, assuming 100 GB total processed
+About $0.68
+Orchestration, logs, and networking contingency
+$3–10
+Overall planning range
+Approximately $42–69
+I would set an $80 project budget, leaving headroom within a full $100 balance.
+Enable Spark auto-pause, job timeouts, bounded retries, modest log retention,
+and an end date for scheduled pipelines.
+Budget alerts do not stop resources or spending. Their cost data also arrives with
+a delay, so runtime controls matter more than alerts alone. Azure budget behavior
+For new Python Functions, use Flex Consumption with no always-ready
+instances, subject to your subscription’s availability. Do not assume the legacy
+Consumption free allowance applies to Flex; their pricing and grants differ. Power
+BI online sharing also requires separate licensing consideration, so use Desktop
+for the initial assessed dashboard. Functions pricing, Power BI licensing
+The report can investigate three measurable questions:
+1. How much does the model improve 30-minute availability prediction over the
+persistence baseline?
+2. Does three-day retraining improve performance compared with keeping the
+initial model fixed?
+3. What processing latency and Azure cost does the pipeline achieve?
+Your required outputs remain a report of at least 15 pages, Azure implementation
+evidence, dashboard, reproducible repository, and a 15-minute presentation plus
+five-minute Q&A. The signed RPS additionally asks for at least 15 references and
+a maximum of three research questions.
+Before committing the architecture, verify that your student subscription can
+provision the 12-vCore Spark configuration and Functions in the chosen region.
+The topic also needs to be unique within your class. The first implementation
+Untitled
+7
+
+=== PAGE 8 ===
+milestone should be the historical backfill into partitioned ADLS storage and a
+working serverless SQL query, matching the RPS’s Pertemuan 4 target.
+Untitled
+8

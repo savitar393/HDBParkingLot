@@ -1,0 +1,30 @@
+{
+  "probe_timestamp_count": 12,
+  "successful_requests": 12,
+  "failed_requests": 0,
+  "metadata_rows": 2272,
+  "metadata_unique_carparks": 2272,
+  "metadata_duplicate_carpark_ids": 0,
+  "flattened_all_lot_type_rows": 29661,
+  "lot_type_counts": {
+    "C": 23928,
+    "H": 2442,
+    "Y": 2430,
+    "S": 297,
+    "L": 282,
+    "M": 282
+  },
+  "car_lot_rows": 23928,
+  "unique_carparks_seen": 2060,
+  "join_matched_rows": 23844,
+  "join_coverage_percent": 99.65,
+  "duplicate_car_key_rows": 0,
+  "total_lots_le_zero_rows": 12,
+  "lots_available_negative_rows": 0,
+  "lots_available_over_total_rows": 0,
+  "staleness_gt_5m_rows": 4673,
+  "staleness_gt_15m_rows": 1348,
+  "staleness_gt_60m_rows": 680,
+  "median_staleness_minutes": 1.88,
+  "p95_staleness_minutes": 15.97
+}

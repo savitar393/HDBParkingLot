@@ -1,0 +1,22 @@
+services:
+  dev:
+    build: .
+    image: hdb-parking-dev:local
+    working_dir: /workspace
+    init: true
+    volumes:
+      - .:/workspace
+      - spark-ivy:/root/.ivy2
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HDB_DATA_DIR: /workspace/data
+      SPARK_LOCAL_IP: 127.0.0.1
+      PYSPARK_PYTHON: python
+    mem_limit: 6g
+    cpus: 4.0
+    stdin_open: true
+    tty: true
+volumes:
+  spark-ivy:

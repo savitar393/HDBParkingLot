@@ -1,0 +1,327 @@
+
+=== PAGE 1 ===
+Then I’d lock the ML task like this.
+The prediction target should be:
+occupancy rate 1 hour ahead for each HDB carpark\textbf{occupancy rate 1 hour ahead for each HDB carpark}
+with
+occupancy_rate=1−lots_availabletotal_lotsoccupancy\_rate = 1-\frac{lots\_available}{total\_lots}
+So for every observation at time tt, the label is:
+y=occupancy_ratet+1hy = occupancy\_rate_{t+1h}
+That is more useful than predicting raw lots_available , because a carpark with 20 available spaces means something very
+different when capacity is 30 versus 500.
+For the first version, I would keep the problem as regression, not classification. The model predicts something like:
+Carpark A
+Current occupancy: 68%
+Predicted occupancy in 1 hour: 82%
+Later, the application can translate that into a user-facing status such as low/medium/high occupancy without making the
+ML problem itself unnecessarily coarse.
+Input features
+We should divide them into four groups.
+Current state
+occupancy_rate
+lots_available
+total_lots
+Temporal features
+hour
+day_of_week
+is_weekend
+month
+Potentially later:
+is_public_holiday
+Historical / lag features
+These will probably carry most of the predictive power:
+occupancy_lag_1h
+occupancy_lag_2h
+occupancy_lag_3h
+occupancy_lag_24h
+occupancy_lag_168h
+The last one represents approximately the same hour one week earlier.
+I'd also add rolling statistics:
+Untitled
+1
+
+=== PAGE 2 ===
+occupancy_mean_3h
+occupancy_mean_6h
+occupancy_mean_24h
+occupancy_std_3h
+occupancy_std_24h
+Possibly:
+occupancy_change_1h
+occupancy_change_3h
+And finally, static carpark metadata:
+car_park_type
+type_of_parking_system
+short_term_parking
+free_parking
+night_parking
+car_park_decks
+gantry_height
+car_park_basement
+x_coord
+y_coord
+We don't necessarily have to use every metadata field initially. Some may contribute almost nothing, and categorical
+features can increase complexity.
+Very important: feature leakage
+For a row at 10:00 , if we're predicting 11:00 , every feature must be knowable at 10:00 or earlier.
+This is valid:
+10:00 occupancy
+09:00 occupancy
+08:00 occupancy
+yesterday 10:00 occupancy
+→ predict 11:00
+This is invalid:
+10:00 occupancy
+10:30 occupancy    ← future information
+11:00 rolling mean ← includes target period
+→ predict 11:00
+So rolling features must always be constructed from historical observations only.
+Conceptually:
+df["lag_1h"] = df.groupby("carpark_number")["occupancy"].shift(1)
+df["mean_3h"] = (
+    df.groupby("carpark_number")["occupancy"]
+      .shift(1)
+      .rolling(3)
+Untitled
+2
+
+=== PAGE 3 ===
+      .mean()
+)
+The shift() before the rolling computation is important.
+Dataset split
+We absolutely should not randomly split rows.
+This is time-series forecasting, so a random split would leak future patterns into training.
+For a six-month bootstrap, something like this is much better:
+Month 1 ────────────────── Month 4
+              TRAIN
+Month 5
+          VALIDATION
+Month 6
+              TEST
+For example, if we eventually collect March through August:
+Mar ─ Jun      Training
+Jul            Validation
+Aug            Test
+That tests whether the model trained on the past can predict a genuinely future period.
+Within the training set, if hyperparameter tuning is needed, we can use expanding-window time-series validation:
+Fold 1:
+Train ──────────>
+                 Validate
+Fold 2:
+Train ─────────────────>
+                         Validate
+Fold 3:
+Train ─────────────────────────>
+                                 Validate
+No shuffling.
+Models
+We need a deliberately simple baseline first.
+Baseline 1 — persistence
+y^t+1h=occupancyt\hat y_{t+1h}=occupancy_t
+Meaning:
+"The occupancy one hour from now will be the same as it is now."
+This is actually a strong baseline for short-horizon forecasting.
+Baseline 2 — historical same-hour
+Something like:
+y^t=occupancyt−24h\hat y_t = occupancy_{t-24h}
+or potentially the corresponding value one week earlier.
+Untitled
+3
+
+=== PAGE 4 ===
+Then our actual ML candidate should initially be a tree-based tabular regression model.
+I would start with:
+HistGradientBoostingRegressor
+or:
+LightGBM / XGBoost
+If we want to minimize dependency complexity, HistGradientBoostingRegressor from scikit-learn is attractive.
+If model performance and project quality matter more, I'd likely choose LightGBM. It works very well for:
+millions of tabular rows,
+nonlinear temporal relationships,
+mixed numerical/categorical-derived features,
+relatively fast retraining,
+CPU training.
+We do not need an LSTM or Transformer just because this is time series.
+Our dataset becomes tabular after lag generation:
+carpark
+hour
+occupancy
+lag1
+lag24
+mean3
+decks
+...
+A
+08
+.62
+.55
+.59
+.52
+5
+...
+B
+08
+.31
+.27
+.35
+.29
+2
+...
+Gradient boosting is extremely suitable for that structure.
+Metrics
+I would use three.
+MAE
+MAE=1n∑∣yi−y^i∣MAE = \frac{1}{n}\sum |y_i-\hat y_i|
+This should probably be our primary metric.
+For occupancy:
+MAE = 0.06
+means the prediction is wrong by about 6 percentage points of occupancy on average.
+That's immediately interpretable.
+RMSE
+Useful because it penalizes large prediction errors more strongly.
+RMSE=1n∑(yi−y^i)2RMSE = \sqrt{\frac{1}{n}\sum(y_i-\hat y_i)^2}
+And:
+R²
+Useful as supplementary model-performance information, though I wouldn't use it as our primary decision metric.
+So our report can say:
+Untitled
+4
+
+=== PAGE 5 ===
+Primary: MAE
+Secondary: RMSE, R²
+We should also calculate MAE separately by:
+carpark
+hour
+weekday/weekend
+occupancy range
+because an overall MAE can hide poorly performing carparks.
+Retraining every three days
+The production model workflow would then be:
+Existing training dataset
+          +
+last 3 days of new observations
+          ↓
+feature generation
+          ↓
+temporal training split
+          ↓
+train candidate model
+          ↓
+evaluate candidate
+          ↓
+compare to deployed model
+I'd put an important safety rule here:
+"Retrain every three days" should not automatically mean "replace the model every three days."
+Instead:
+Every 3 days:
+    retrain candidate
+if candidate performance acceptable:
+    register/promote candidate
+else:
+    keep existing model
+That gives us a much more realistic ML lifecycle.
+We can therefore distinguish:
+Retraining frequency = every 3 days
+Deployment frequency = conditional
+Training window
+I wouldn't let the training dataset grow forever.
+For parking patterns, old observations may eventually become less representative because of infrastructure changes,
+closures, parking-system changes, etc.
+A reasonable initial policy is a rolling six-month training window:
+Training run Sept 15
+→ Mar 15–Sept 14 data
+Untitled
+5
+
+=== PAGE 6 ===
+Training run Sept 18
+→ Mar 18–Sept 17 data
+Training run Sept 21
+→ Mar 21–Sept 20 data
+That also keeps compute and Azure cost predictable.
+We could later compare:
+3 months
+6 months
+12 months
+but six months is a sensible initial configuration.
+Final ML specification
+So I'd consider this our current project specification:
+Component
+Decision
+Problem
+HDB carpark occupancy forecasting
+ML type
+Supervised regression
+Forecast horizon
+1 hour
+Entity
+Individual HDB carpark
+Target
+Occupancy rate at t + 1h
+Sampling
+Hourly
+Historical bootstrap
+~6 months
+Ongoing ingestion
+Hourly
+Training window
+Rolling 6 months
+Retraining
+Every 3 days
+Primary baseline
+Persistence
+Candidate model
+Gradient-boosted trees
+Primary metric
+MAE
+Secondary metrics
+RMSE, R²
+Split
+Temporal
+Main features
+Lags + rolling statistics + calendar + carpark metadata
+Model replacement
+Conditional on evaluation
+And the conceptual dataset is:
+timestamp
+carpark_number
+# Current observation
+occupancy_rate
+total_lots
+lots_available
+# Time
+hour
+day_of_week
+is_weekend
+# History
+lag_1h
+lag_2h
+lag_3h
+lag_24h
+Untitled
+6
+
+=== PAGE 7 ===
+lag_168h
+rolling_mean_3h
+rolling_mean_6h
+rolling_mean_24h
+rolling_std_24h
+# Metadata
+car_park_type
+parking_system
+car_park_decks
+night_parking
+free_parking
+x_coord
+y_coord
+# Label
+target_occupancy_1h
+At this point the data source, target, sampling frequency, prediction horizon, feature family, evaluation strategy, and
+retraining policy are defined.
+The next phase can therefore be the actual end-to-end system architecture on Azure—ingestion → storage → processing
+→ ML training → model registry → prediction API/dashboard—while keeping it realistic for the Azure for Students budget.
+Untitled
+7

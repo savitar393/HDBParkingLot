@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hdb-parking-prediction"
+version = "0.1.0"
+description = "Local-first HDB carpark forecasting lakehouse, designed to migrate to Azure"
+requires-python = ">=3.11,<3.13"
+dependencies = ["requests>=2.32,<3", "urllib3>=2,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.8,<1"]
+spark = ["pyspark==3.5.9", "delta-spark==3.3.2"]
+analytics = ["duckdb>=1.2,<2"]
+
+[project.scripts]
+hdb = "hdb_parking.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

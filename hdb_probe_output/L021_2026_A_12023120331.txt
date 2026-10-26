@@ -1,0 +1,2135 @@
+
+=== PAGE 1 ===
+RENCANA PEMBELAJARAN SEMESTER (RPS)
+PROGRAM STUDI SAINS DATA
+FAKULTAS TEKNOLOGI INFORMASI DAN SAINS DATA
+UNIVERSITAS SEBELAS MARET
+Identitas Mata Kuliah
+Identitas dan Validasi
+Nama
+Tanda Tangan
+Kode Mata Kuliah
+:
+12023120331
+Dosen Pengembang RPS
+:
+Bambang Widoyono S.T., M.T.I.
+Nama Mata Kuliah
+:
+Teknologi Cloud untuk Big Data dan Data Analitik
+Jenis Mata Kuliah
+(Wajib/pilihan)
+:
+Wajib
+Koord. Kelompok Mata Kuliah
+:
+Bambang Widoyono S.T., M.T.I.
+Semester
+:
+5
+Ketua Program Studi
+:
+Prof. Dr. Techn. Dewi Wisnu Wardani,
+S.Kom., M.S.
+Bobot Mata Kuliah (SKS)
+:
+3
+a. Bobot tatap muka
+:
+2
+b. Bobot Praktikum
+:
+1
+c. Bobot praktek lapangan
+:
+0
+d. Bobot simulasi
+:
+0
+Mata Kuliah Prasyarat
+:
+12023220323 - Infrastruktur dan Platform Big Data
+
+=== PAGE 2 ===
+Tanggal Dibuat
+:
+2025-08-23
+Perbaikan Ke-
+:
+1
+Tanggal Edit : 2026-08-16
+Capaian Pembelajaran Lulusan (CPL) / Learning Outcome (LO) yang dibebankan pada Mata Kuliah
+Kode CPL/LO
+Unsur CPL/LO
+4
+:
+Mampu mengimplementasikan manajemen strategi pengumpulan data, penyimpanan data, pemeliharaan data,
+kualitas data, keamanan data, dan menjamin ketersediaan data untuk keperluan pengolahan lebih lanjut.
+Capaian Pembelajaran
+Mata Kuliah (CPMK)
+:
+CPMK 1: Mahasiswa mampu merancang, membangun, dan mengimplementasikan (create) solusi big data dan data analytics yang scalable, aman, dan
+cost-eﬃcient pada platform cloud computing
+Bahan kajian (Subject
+Matters)
+:
+Konsep, Arsitektur dan model Layanan Cloud Computing
+:
+Keamanan Cloud Computing
+:
+Serverless Data Engineering
+:
+Arsitektur Data di Cloud
+:
+Streaming/Micro-batch di Cloud
+:
+Analitik Machine Learning di Cloud
+Deskripsi Mata Kuliah
+:
+Mata Kuliah ini mempelajari fenomena, framework, peluang dan tantangan Big Data, serta pemahaman konsep,
+teori, framework dari aktivitas Data Analytics. Hal lain yang dipelajari adalah memilih dan melakukan aktivitas
+Data Analytics yang sesuai dengan konteks masalah bisnis yang dihadapi serta membuat model deskripsi dan
+prediksi menggunakan data yang tersedia. Mencari Pattern dan Insight dari data, algoritma dalam manajemen
+Big Data dan masalah kompleksitas pengaturan serta perhitungan Big Data, fenomena ‘Networked Data’,
+implementasi, peluang dan tantangan ‘social network for business’. Memahami konsep Data Mining : Regresi,
+Klasiﬁkasi dan Klastering, Association Rules Mining. Tantangan dan Peluang Big Data.
+
+=== PAGE 3 ===
+Basis Penilaian
+:
+a. Aktvitas Partisipatif (Case Method) = 20%
+:
+b. Hasil Proyek (Team Based Project) = 50%
+:
+c. Tugas = 10%
+:
+d. Quis = 0%
+:
+e. UTS = 20%
+:
+f. UAS = 0%
+
+=== PAGE 4 ===
+Daftar Referensi
+:
+Fregly, C., & Barth, A., Data Science on AWS: Implementing end-to-end, continuous AI and machine learning
+pipelines. , O'Reilly Media., 2021,
+:
+Lakshmanan, V. , Data science on the Google Cloud Platform: Implementing end-to-end real-time data pipelines
+(2nd ed.)., O'Reilly Media., 2022,
+:
+Damji, J. S., Wenig, B., Das, T., & Lee, D. , Learning Spark: Lightning-fast data analytics (2nd ed.). , O'Reilly
+Media., 2020,
+:
+Kukreja, M., & Zburivsky, D. , Data engineering with Apache Spark, Delta Lake, and Lakehouse. , Packt
+Publishing., 2021,
+:
+L'Esteve, R. C., The deﬁnitive guide to Azure data engineering: Modern ELT, DevOps, and analytics on the Azure
+cloud platform., Apress, 2021,
+:
+Körner, C., & Alsdorf, M., Mastering Azure Machine Learning: Execute large-scale end-to-end machine learning
+with Azure (2nd ed.). , Packt Publishing., 2022,
+:
+Berisha, B., Mëziu, E., & Shabani, I., Big data analytics in Cloud computing: An overview. Journal of Cloud
+Computing, Article 24, 11, , 2022, Article 24
+:
+Alam, A., Ullah, I., & Lee, Y.-K., Video big data analytics in the Cloud: A reference architecture, survey,
+opportunities, and open research issues, IEEE Access, 8, , 2020, IEEE Access
+:
+Hassan, H. B., Barakat, S. A., & Sarhan, Q. I., Survey on serverless computing. Journal of Cloud Computing,
+Article 39, 10, , 2021, Article 39
+:
+Muhammad Fahmy Nadhif S.Kom., M.T.,Ridha Adjie Eryadi,Bambang Widoyono S.T., M.T.I., Evaluating Single
+and Hybrid Feature Selection for Rainfall Prediction Using XGBoost , Evaluating Single and Hybrid Feature
+Selection for Rainfall Prediction Using XGBoost , Vol. 9, No. 1, March 2026, , 2026, Indonesian Journal of Artiﬁcial
+Intelligence and Data Mining (IJAIDM)
+
+=== PAGE 5 ===
+Tahap
+Kemampuan akhir/ Sub-
+CPMK (Kode CPL) [SDG]
+Materi Pokok
+Referensi (kode
+dan halaman)
+Metode Pembelajaran
+Waktu
+Pengalaman
+Belajar
+Penilaian
+Luring
+Daring
+Basis
+penilaian
+Teknik
+penilaian
+Indikator, kriteria, (tingkat
+taksonomi)
+Bobot
+penilaian
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+1
+Mahasiswa mampu
+menjelaskan konsep dasar
+cloud computing (model
+layanan & model deployment)
+dan membandingkan layanan
+utama Azure, AWS, dan GCP
+untuk big data & data
+analytics( LO-4)
+SDG 1, SDG 4, SDG 17
+Pengantar Cloud
+Computing untuk Big
+Data & Data Analytics:
+- Deﬁnisi, evolusi, dan
+karakteristik cloud
+computing (on-demand,
+elastisitas, pay-as-you-
+go)
+- Model layanan: IaaS,
+PaaS, SaaS, dan FaaS
+(serverless) untuk
+kebutuhan big data
+- Model deployment:
+public, private, hybrid,
+dan multi-cloud
+- Overview &
+perbandingan layanan
+big data utama:
+Microsoft Azure, AWS,
+dan Google Cloud
+Platform
+- Roadmap perkuliahan:
+praktikum Azure
+berkelanjutan, integrasi
+VS Code, CI/CD, MLOps,
+dan gambaran Final
+Project
+Data engineering
+with Apache Spark,
+Delta Lake, and
+Lakehouse. , Big data
+analytics in Cloud
+computing: An
+overview. Journal of
+Cloud Computing
+Diskusi Kelompok,Studi
+Kasus,Pembelajaran
+Kolaboratif
+Studi
+Kasus,Pembelajaran
+Kolaboratif,Pembelajaran
+Berbasis Masalah
+1*150
+Menit
+Diskusi,
+partisipasi,
+kolaborasi
+Tugas
+Observasi
+,Partisipasi,Unjuk
+Kerja
+Mampu menjelaskan konsep
+dasar cloud computing (model
+layanan & model deployment)
+dan membandingkan layanan
+utama Azure, AWS, dan GCP
+untuk big data & data
+analytics
+2%
+
+=== PAGE 6 ===
+2
+Mahasiswa mampu
+menjelaskan konsep dasar
+cloud computing (model
+layanan & model deployment)
+dan membandingkan layanan
+utama Azure, AWS, dan GCP
+untuk big data & data
+analytics( LO-4)
+SDG 1, SDG 4, SDG 17
+Model Layanan Cloud &
+Serverless untuk Big
+Data.
+- Perbandingan
+mendalam IaaS vs PaaS
+vs SaaS vs FaaS untuk
+workload big data
+- Shared responsibility
+model pada cloud
+- Konsep serverless
+computing: event-
+driven, auto-scaling,
+cost-per-execution
+- Pemilihan layanan
+sesuai skenario (batch,
+streaming, interactive
+query)
+- Pentingnya tooling
+pengembangan lokal 
+Data Science on AWS:
+Implementing end-to-
+end, continuous AI
+and machine learning
+pipelines. ,The
+deﬁnitive guide to
+Azure data
+engineering: Modern
+ELT, DevOps, and
+analytics on the
+Azure cloud
+platform.,Survey on
+serverless computing.
+Journal of Cloud
+Computing
+Studi
+Kasus,Pembelajaran
+Kolaboratif
+Studi
+Kasus,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Case
+Method
+Partisipasi,Unjuk
+Kerja
+Mampu menjelaskan konsep
+dasar cloud computing (model
+layanan & model deployment)
+dan membandingkan layanan
+utama Azure, AWS, dan GCP
+untuk big data & data
+analytics
+2%
+3
+Mahasiswa mampu
+menganalisis arsitektur cloud
+data platform (data lake,
+cloud data warehouse,
+lakehouse) serta memilih dan
+menerapkan layanan storage
+& pemrosesan terdistribusi
+(Spark) di cloud sesuai
+kebutuhan big data( LO-4)
+SDG 4, SDG 17
+Cloud Storage untuk Big
+Data (Data Lake di
+Cloud):
+- Arsitektur data lake vs
+data warehouse vs
+lakehouse pada cloud
+- Format data cloud-
+native: Parquet, ORC,
+Delta Lake, Avro
+- Azure Data Lake
+Storage (ADLS) Gen2:
+hierarchical namespace
+- Strategi partisi data
+untuk performa &
+eﬁsiensi biaya query
+- Perbandingan singkat
+dengan Amazon S3
+(AWS) dan Cloud
+Storage (GCP)
+- Pengantar pola
+Medallion Architecture
+(Bronze-Silver-Gold)
+sebagai kerangka
+pengorganisasian data
+lakehouse yang dipakai
+konsisten sepanjang
+mata kuliah
+Data science on the
+Google Cloud
+Platform:
+Implementing end-to-
+end real-time data
+pipelines (2nd
+ed.).,Data
+engineering with
+Apache Spark, Delta
+Lake, and Lakehouse.
+Studi
+Kasus,Pembelajaran
+Kolaboratif,Pembelajaran
+Kooperatif
+Diskusi Kelompok,Studi
+Kasus,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Case
+Method
+Partisipasi,Unjuk
+Kerja
+Mampu menganalisis
+arsitektur cloud data platform
+(data lake, cloud data
+warehouse, lakehouse) serta
+memilih dan menerapkan
+layanan storage &
+pemrosesan terdistribusi
+(Spark) di cloud sesuai
+kebutuhan big data
+3%
+
+=== PAGE 7 ===
+4
+Mahasiswa mampu
+menganalisis arsitektur cloud
+data platform (data lake,
+cloud data warehouse,
+lakehouse) serta memilih dan
+menerapkan layanan storage
+& pemrosesan terdistribusi
+(Spark) di cloud sesuai
+kebutuhan big data( LO-4)
+SDG 4, SDG 17
+Cloud Data Warehouse,
+Lakehouse Modern &
+Query/Analitik Dasar:
+- Evolusi data
+warehouse menuju
+cloud data warehouse
+(kontras ringkas dengan
+on-premise)
+- Azure Synapse
+Analytics: dedicated
+SQL pool vs serverless
+SQL pool
+- Konsep Lakehouse
+sebagai penyatuan data
+lake dan data
+warehouse
+- Paradigma ETL vs ELT
+pada era cloud & big
+data
+- Trade-oﬀ biaya vs
+performa antar opsi
+cloud data warehouse
+(Synapse, BigQuery,
+Redshift)
+Data engineering
+with Apache Spark,
+Delta Lake, and
+Lakehouse. ,The
+deﬁnitive guide to
+Azure data
+engineering: Modern
+ELT, DevOps, and
+analytics on the
+Azure cloud platform.,
+Big data analytics in
+Cloud computing: An
+overview. Journal of
+Cloud Computing
+Simulasi,Diskusi
+Kelompok,Pembelajaran
+Kolaboratif
+Simulasi,Diskusi
+Kelompok,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Tugas
+Observasi
+,Partisipasi
+Mahasiswa mampu
+menganalisis arsitektur cloud
+data platform (data lake,
+cloud data warehouse,
+lakehouse) serta memilih dan
+menerapkan layanan storage
+& pemrosesan terdistribusi
+(Spark) di cloud sesuai
+kebutuhan big data
+2%
+5
+Mampu memahami
+penerapan Lakehouse & Delta
+Lake di cloud( LO-4)
+SDG 1, SDG 4, SDG 17
+Pemrosesan Big Data
+Terdistribusi di Cloud :
+- Konsep pemrosesan
+terdistribusi & posisi
+Apache Spark dalam
+ekosistem big data
+cloud
+- Arsitektur Spark
+cluster: driver, executor,
+cluster manager
+- Layanan Spark
+terkelola di cloud: Azure
+Synapse Spark Pool,
+Azure Databricks
+- Strategi cluster sizing
+& auto-termination
+untuk kontrol biaya
+Learning Spark:
+Lightning-fast data
+analytics (2nd ed.).
+,Data engineering
+with Apache Spark,
+Delta Lake, and
+Lakehouse.
+Simulasi,Diskusi
+Kelompok,Pembelajaran
+Kooperatif
+Diskusi Kelompok,Studi
+Kasus,Pembelajaran
+Kooperatif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Tugas
+Partisipasi,Unjuk
+Kerja
+Mahasiswa mampu
+menganalisis arsitektur cloud
+data platform (data lake,
+cloud data warehouse,
+lakehouse) serta memilih dan
+menerapkan layanan storage
+& pemrosesan terdistribusi
+(Spark) di cloud sesuai
+kebutuhan big data
+2%
+
+=== PAGE 8 ===
+6
+Mahasiswa mampu
+menerapkan pipeline data
+(ETL/ELT & orkestrasi) di cloud
+serta mengevaluasi aspek
+keamanan, governance, dan
+eﬁsiensi biaya (cost
+optimization/FinOps) pada
+solusi big data cloud( LO-4)
+SDG 4, SDG 17
+Data Pipeline &
+Orkestrasi di Cloud
+- Konsep pipeline data
+cloud-native (ETL/ELT
+otomatis)
+- Orkestrasi dengan
+Azure Data Factory
+(ADF) / Synapse
+Pipelines: activity,
+trigger, scheduling
+- Monitoring &
+penanganan error pada
+pipeline
+- Prinsip idempotency
+dalam desain pipeline
+data
+- Contoh penerapan
+nyata big data & data
+analytics yang
+berdampak sosial (mis.
+e-commerce, kesehatan
+publik, pemantauan
+kualitas lingkungan)
+sebagai ilustrasi
+manfaat pipeline yang
+andal
+- Catatan posisi materi:
+pipeline pada
+pertemuan ini
+memindahkan data ke
+lapisan Bronze secara
+batch sederhana
+Data engineering
+with Apache Spark,
+Delta Lake, and
+Lakehouse. ,The
+deﬁnitive guide to
+Azure data
+engineering: Modern
+ELT, DevOps, and
+analytics on the
+Azure cloud platform.
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Case
+Method
+Partisipasi
+Mahasiswa mampu
+menerapkan pipeline data
+(ETL/ELT & orkestrasi) di cloud
+serta mengevaluasi aspek
+keamanan, governance, dan
+eﬁsiensi biaya (cost
+optimization/FinOps) pada
+solusi big data cloud
+3%
+7
+Mahasiswa mampu
+menerapkan pipeline data
+(ETL/ELT & orkestrasi) di cloud
+serta mengevaluasi aspek
+keamanan, governance, dan
+eﬁsiensi biaya (cost
+optimization/FinOps) pada
+solusi big data cloud( LO-4)
+SDG 4, SDG 17
+Keamanan, Governance
+& Manajemen Biaya
+(FinOps) Cloud Big Data:
+- Prinsip keamanan
+cloud: IAM, RBAC,
+enkripsi data at rest/in
+transit, private endpoint
+- FinOps: strategi cost
+optimization (reserved
+vs pay-as-you-go, auto-
+scale, resource tagging,
+budget alert)
+Data engineering
+with Apache Spark,
+Delta Lake, and
+Lakehouse. ,The
+deﬁnitive guide to
+Azure data
+engineering: Modern
+ELT, DevOps, and
+analytics on the
+Azure cloud platform.
+Studi Kasus
+Studi Kasus
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Case
+Method
+Tes Tertulis
+Mampu menerapkan pipeline
+data (ETL/ELT & orkestrasi) di
+cloud serta mengevaluasi
+aspek keamanan,
+governance, dan eﬁsiensi
+biaya (cost
+optimization/FinOps) pada
+solusi big data cloud
+2%
+
+=== PAGE 9 ===
+8
+Mampu mengerjakan soal UTS
+dengan baik dan benar
+( LO-4)
+SDG 4
+Ujian Tengah Semester
+(UTS)
+Mastering Azure
+Machine Learning:
+Execute large-scale
+end-to-end machine
+learning with Azure
+(2nd ed.). , Big data
+analytics in Cloud
+computing: An
+overview. Journal of
+Cloud Computing
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Menjawab soal
+UTS
+UTS
+Tes Tertulis
+Mampu mengerjakan soal UTS
+dengan baik dan benar
+20%
+9
+Mahasiswa mampu
+menerapkan proses ingestion
+data (batch & streaming) dan
+menganalisis/mengoptimalkan
+pemrosesan big data skala
+besar serta visualisasi analitik
+di cloud( LO-4)
+SDG 4, SDG 17
+Cloud Data Ingestion:
+Batch vs Real-
+Time/Streaming:
+- Paradigma batch vs
+streaming ingestion
+pada cloud
+- Overview Azure Event
+Hubs (kompatibel
+protokol Kafka, terkelola
+penuh) & IoT Hub untuk
+ingestion data skala
+besar tanpa perlu
+mengelola cluster Kafka
+sendiri
+- Arsitektur lambda (dua
+jalur batch+speed
+terpisah) vs kappa (satu
+jalur terpadu) dalam
+konteks lakehouse
+modern — proyek
+AirSense Nusantara
+memilih pendekatan
+condong-kappa (satu
+pipeline
+Bronze?Silver?Gold
+menangani batch
+maupun streaming via
+Delta Lake
+merge/upsert) karena
+lebih hemat biaya dan
+lebih sederhana
+dipelihara dibanding
+memelihara dua jalur
+kode terpisah ala
+lambda
+Data science on the
+Google Cloud
+Platform:
+Implementing end-to-
+end real-time data
+pipelines (2nd
+ed.).,Video big data
+analytics in the
+Cloud: A reference
+architecture, survey,
+opportunities, and
+open research issues
+Simulasi,Pembelajaran
+Kolaboratif
+Simulasi,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Case
+Method
+Partisipasi
+Mahasiswa mampu
+menerapkan proses ingestion
+data (batch & streaming) dan
+menganalisis/mengoptimalkan
+pemrosesan big data skala
+besar serta visualisasi analitik
+di cloud
+3%
+
+=== PAGE 10 ===
+10
+Mahasiswa mampu
+menerapkan proses ingestion
+data (batch & streaming) dan
+menganalisis/mengoptimalkan
+pemrosesan big data skala
+besar serta visualisasi analitik
+di cloud( LO-4)
+SDG 4, SDG 17
+Optimasi Pemrosesan
+Big Data, Delta Lake &
+Query Lanjutan:
+- Teknik optimasi Spark
+di cloud: partitioning,
+caching, broadcast join,
+predicate pushdown
+- Delta Lake: transaksi
+ACID di atas data lake,
+mekanisme yang
+memungkinkan satu
+pipeline menangani
+upsert data batch
+maupun streaming
+- Auto-scaling & cluster
+policy untuk kontrol
+biaya kompute
+- Monitoring job Spark
+(Spark UI, Synapse
+Monitoring Hub)
+Learning Spark:
+Lightning-fast data
+analytics (2nd ed.).
+,Data engineering
+with Apache Spark,
+Delta Lake, and
+Lakehouse.
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Tugas
+Observasi ,Unjuk
+Kerja ,Tes
+Tertulis ,Tes
+Lisan
+Mahasiswa mampu
+menerapkan proses ingestion
+data (batch & streaming) dan
+menganalisis/mengoptimalkan
+pemrosesan big data skala
+besar serta visualisasi analitik
+di cloud
+2%
+11
+Mahasiswa mampu
+menerapkan proses ingestion
+data (batch & streaming) dan
+menganalisis/mengoptimalkan
+pemrosesan big data skala
+besar serta visualisasi analitik
+di cloud( LO-4)
+SDG 4, SDG 17
+Analitik Big Data &
+Visualisasi/Dashboard di
+Cloud:
+- Konsep BI/Analytics-as-
+a-Service pada cloud
+- Integrasi Power BI
+dengan Azure Synapse
+untuk self-service
+analytics
+- Praktik terbaik desain
+dashboard untuk data
+skala besar
+- Dashboard real-time
+vs periodik
+Data Science on AWS:
+Implementing end-to-
+end, continuous AI
+and machine learning
+pipelines. ,Data
+science on the
+Google Cloud
+Platform:
+Implementing end-to-
+end real-time data
+pipelines (2nd ed.).
+Simulasi,Diskusi
+Kelompok,Pembelajaran
+Kolaboratif
+Simulasi,Diskusi
+Kelompok,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Case
+Method
+Partisipasi,Unjuk
+Kerja ,Tes Lisan
+Mahasiswa mampu
+menerapkan proses ingestion
+data (batch & streaming) dan
+menganalisis/mengoptimalkan
+pemrosesan big data skala
+besar serta visualisasi analitik
+di cloud
+2%
+
+=== PAGE 11 ===
+12
+Mahasiswa mampu
+menganalisis integrasi
+Machine Learning/AI
+(termasuk retraining & API
+inference) dalam pipeline big
+data cloud, menerapkan
+integrasi VS Code & CI/CD,
+serta mengevaluasi
+implementasi MLOps dan
+kesesuaiannya dengan Well-
+Architected Framework(
+LO-4)
+SDG 4, SDG 17
+Integrasi Machine
+Learning/AI: Training,
+Retraining & API
+Inference:
+- Arsitektur integrasi
+ML/AI dalam pipeline big
+data cloud (overview
+Azure Machine
+Learning), memakai
+data siap-ML dari
+lapisan Gold
+- Batch scoring vs real-
+time scoring dalam
+pipeline big data
+- Menyediakan model
+sebagai API untuk
+inference (REST
+endpoint melalui Azure
+Function / Azure ML
+endpoint)
+- Pengantar singkat
+kebutuhan retraining
+(model bisa usang
+seiring waktu) —
+mekanisme retraining
+otomatis & strategi
+hemat biaya training
+akan dibahas tuntas
+pada Pertemuan 14
+sebagai bagian siklus
+MLOps
+Data Science on AWS:
+Implementing end-to-
+end, continuous AI
+and machine learning
+pipelines. ,Mastering
+Azure Machine
+Learning: Execute
+large-scale end-to-
+end machine learning
+with Azure (2nd ed.).
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+Studi
+Kasus,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Case
+Method
+Observasi
+,Partisipasi,Unjuk
+Kerja ,Tes Lisan
+Mahasiswa mampu
+menganalisis integrasi
+Machine Learning/AI
+(termasuk retraining & API
+inference) dalam pipeline big
+data cloud, menerapkan
+integrasi VS Code & CI/CD,
+serta mengevaluasi
+implementasi MLOps dan
+kesesuaiannya dengan Well-
+Architected Framework
+3%
+
+=== PAGE 12 ===
+13
+Mahasiswa mampu
+menganalisis integrasi
+Machine Learning/AI
+(termasuk retraining & API
+inference) dalam pipeline big
+data cloud, menerapkan
+integrasi VS Code & CI/CD,
+serta mengevaluasi
+implementasi MLOps dan
+kesesuaiannya dengan Well-
+Architected Framework(
+LO-4)
+SDG 4, SDG 17
+Integrasi VS Code &
+Implementasi CI/CD
+untuk Cloud Big Data:
+- Alur kerja
+pengembangan lokal
+dengan VS Code
+(ekstensi Azure
+Account, Azure Storage,
+Azure Functions, Azure
+Synapse)
+- Overview
+infrastructure/pipeline
+as code untuk resource
+cloud big data
+- Konsep CI/CD untuk
+data & ML pipeline:
+kontrol versi
+(Git/GitHub), build &
+release pipeline (GitHub
+Actions / Azure DevOps
+Pipelines)
+- Automated testing
+dasar untuk pipeline
+data guna
+meminimalkan human
+error dan biaya
+provisioning berulang
+Learning Spark:
+Lightning-fast data
+analytics (2nd ed.).
+,Mastering Azure
+Machine Learning:
+Execute large-scale
+end-to-end machine
+learning with Azure
+(2nd ed.). ,Survey on
+serverless computing.
+Journal of Cloud
+Computing
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Tugas
+Observasi
+,Partisipasi,Unjuk
+Kerja
+Mahasiswa mampu
+menganalisis integrasi
+Machine Learning/AI
+(termasuk retraining & API
+inference) dalam pipeline big
+data cloud, menerapkan
+integrasi VS Code & CI/CD,
+serta mengevaluasi
+implementasi MLOps dan
+kesesuaiannya dengan Well-
+Architected Framework
+2%
+
+=== PAGE 13 ===
+14
+Mahasiswa mampu
+menganalisis integrasi
+Machine Learning/AI
+(termasuk retraining & API
+inference) dalam pipeline big
+data cloud, menerapkan
+integrasi VS Code & CI/CD,
+serta mengevaluasi
+implementasi MLOps dan
+kesesuaiannya dengan Well-
+Architected Framework(
+LO-4)
+SDG 4, SDG 17
+Implementasi MLOps &
+Review Cloud Data
+Governance / Well-
+Architected Framework:
+- Siklus hidup MLOps di
+cloud: versioning data &
+model, experiment
+tracking, model registry,
+monitoring model drift
+(overview Azure ML
+pipelines)
+- Strategi retraining
+model secara
+mendalam (terjadwal vs
+dipicu data drift) dan
+strategi hemat biaya
+training (compute
+kecil/Google Colab vs
+deploy inference ringan
+di Azure
+- Data governance:
+katalog data, lineage,
+klasiﬁkasi data
+(overview Microsoft
+Purview) dan pengantar
+kepatuhan data
+(GDPR/UU PDP)
+- Well-Architected
+Framework: lima pilar
+(cost optimization,
+security, reliability,
+operational excellence,
+performance eﬃciency)
+diterapkan menyeluruh
+pada solusi big data
+cloud
+Data Science on AWS:
+Implementing end-to-
+end, continuous AI
+and machine learning
+pipelines. ,Mastering
+Azure Machine
+Learning: Execute
+large-scale end-to-
+end machine learning
+with Azure (2nd ed.).
+, Big data analytics in
+Cloud computing: An
+overview. Journal of
+Cloud Computing
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+Simulasi,Studi
+Kasus,Pembelajaran
+Kolaboratif
+1*150
+Menit
+Ceramah, diskusi
+kelas, latihan di
+kelas, praktikum,
+project 
+Case
+Method
+Observasi
+,Partisipasi,Unjuk
+Kerja
+Mampu menganalisis integrasi
+Machine Learning/AI
+(termasuk retraining & API
+inference) dalam pipeline big
+data cloud, menerapkan
+integrasi VS Code & CI/CD,
+serta mengevaluasi
+implementasi MLOps dan
+kesesuaiannya dengan Well-
+Architected Framework
+2%
+
+=== PAGE 14 ===
+15-16
+Mahasiswa mampu
+merancang, membangun, dan
+mempresentasikan solusi big
+data & data analytics end-to-
+end pada platform cloud
+(Azure) secara orisinal, aman,
+dan cost-eﬃcient( LO-4)
+SDG 4, SDG 17
+Presentasi Final Project
+Data Science on AWS:
+Implementing end-to-
+end, continuous AI
+and machine learning
+pipelines. ,Data
+science on the
+Google Cloud
+Platform:
+Implementing end-to-
+end real-time data
+pipelines (2nd
+ed.).,Learning Spark:
+Lightning-fast data
+analytics (2nd ed.).
+,Data engineering
+with Apache Spark,
+Delta Lake, and
+Lakehouse. ,The
+deﬁnitive guide to
+Azure data
+engineering: Modern
+ELT, DevOps, and
+analytics on the
+Azure cloud
+platform.,Mastering
+Azure Machine
+Learning: Execute
+large-scale end-to-
+end machine learning
+with Azure (2nd ed.).
+, Big data analytics in
+Cloud computing: An
+overview. Journal of
+Cloud
+Computing,Video big
+data analytics in the
+Cloud: A reference
+architecture, survey,
+opportunities, and
+open research
+issues,Survey on
+serverless computing.
+Journal of Cloud
+Computing,Evaluating
+Single and Hybrid
+Feature Selection for
+Rainfall Prediction
+Using XGBoost
+Studi
+Kasus,Pembelajaran
+Kolaboratif,Pembelajaran
+Berbasis Proyek
+Studi
+Kasus,Pembelajaran
+Kolaboratif,Pembelajaran
+Berbasis Proyek
+2*150
+Menit
+Mempresentasikan
+solusi big data &
+data analytics
+end-to-end pada
+platform cloud
+secara orisinal,
+aman, dan cost-
+eﬃcient
+Team
+Based
+Project
+Unjuk Kerja ,Tes
+Lisan
+Mahasiswa mampu
+merancang, membangun, dan
+mempresentasikan solusi big
+data & data analytics end-to-
+end pada platform cloud
+secara orisinal, aman, dan
+cost-eﬃcient
+50%
+
+=== PAGE 15 ===
+Aspek Penilaian
+Indikator Penilaian
+Skala 1 (Kurang)
+Skala 2 (Cukup)
+Skala 3 (Baik)
+Skala 4 (Sangat Baik)
+Bobot 
+(%)
+1. Desain Arsitektur 
+(E2E)
+- Relevansi komponen (ingest, lakehouse, 
+ML, BI, observabilitas).
+- Pertimbangan performa, biaya, operasi.
+Arsitektur parsial, 
+banyak komponen 
+hilang.
+Ada komponen 
+utama tapi integrasi 
+lemah.
+Hampir semua 
+komponen relevan, 
+integrasi cukup 
+jelas.
+Semua komponen 
+lengkap & integrasi 
+harmonis, trade-off 
+dibahas.
+20
+2. Implementasi Data 
+Ingestion & Storage
+- Pipeline ingestion batch/stream.
+'- Struktur data lake
+Tidak ada pipeline 
+jelas; data statis.
+Pipeline ada tapi 
+hanya batch/stream 
+sederhana.
+Pipeline 
+batch+stream 
+berjalan, lake 
+terstruktur.
+Pipeline terotomasi & 
+robust; ada logging/error 
+handling.
+15
+3. Query & 
+Transformasi 
+(Lakehouse/Delta)
+- Penggunaan schema-on-read/external 
+tables.
+'- Delta Lake (ACID, time travel, MERGE).
+Tidak implementasi 
+query/transaksi.
+Ada query dasar 
+tanpa Delta.
+Query eksternal & 
+Delta dasar 
+(INSERT/UPDATE).
+Delta advanced: MERGE, 
+OPTIMIZE, time travel; 
+cost-aware.
+10
+4. Streaming / Near 
+Real-Time
+- Streaming job (Azure Stream Analytics / 
+Databricks).
+'- Semantik processing-time/event-time.
+Tidak ada 
+streaming.
+Ada streaming tapi 
+tidak konsisten.
+Streaming job 
+dengan windowing 
+& checkpoint.
+Streaming robust: 
+exactly-once, data 
+quality checks.
+10
+5. Machine Learning & 
+Analitik
+- Model sederhana di Spark ML/MLflow.
+- Feature store/experiment tracking.
+Tidak ada 
+ML/analitik.
+Ada model 
+sederhana tanpa 
+tracking.
+Model terlatih + 
+tracking 
+eksperimen.
+Pipeline ML E2E: feature 
+table, MLflow tracking, 
+evaluasi.
+10
+6. Visualisasi & BI
+- Dashboard interaktif (Power BI / 
+Synapse).
+Tidak ada 
+dashboard.
+Dashboard minimal, 
+data statis.
+Dashboard 
+interaktif, koneksi 
+ke lakehouse.
+Dashboard lengkap: 
+interaktif, filter, semantic 
+layer.
+5
+7. Keamanan & 
+Governance
+- IAM/RBAC; Managed Identity.
+- Enkripsi; kebijakan least-privilege.
+Tanpa kontrol 
+akses.
+Kontrol akses dasar, 
+kurang konsisten.
+RBAC + identity + 
+enkripsi at-rest/in-
+transit.
+Zero Trust, audit trail, 
+kebijakan compliance.
+10
+8. Observabilitas & 
+Biaya
+- Logging/metrics; lineage/provenance.
+'- Cost management.
+Tidak ada 
+monitoring/biaya.
+Logging dasar atau 
+cost alert.
+Monitoring + 
+lineage dasar; 
+budget alert aktif.
+Observabilitas lengkap 
+(logs, lineage, alerts); 
+cost optimization.
+10
+9. Dokumentasi & 
+Presentasi
+- Dokumentasi teknis, diagram arsitektur.
+'- Presentasi hasil
+Tidak ada 
+dokumentasi 
+/presentasi.
+Dokumentasi minim, 
+diagram tidak 
+lengkap.
+Dokumentasi jelas 
++ diagram; 
+presentasi cukup.
+Dokumentasi 
+profesional, diagram 
+detail, presentasi 
+analitis.
+5
+Total
+100
+
+=== PAGE 16 ===
+MATRIKS PENILAIAN 
+Technology Cloud untuk Big Data dan Data Analytics 
+A. Komposisi Bobot Nilai 
+Komponen 
+Bobot 
+Keterangan 
+Tugas Individu (Case Method) 
+10% 
+Cicilan Final Project, result-oriented, dinilai per milestone (P4, P7, P10, 
+P12) 
+Ujian Tengah Semester (UTS) 
+20% 
+Evaluasi pemahaman konseptual materi Pertemuan 1–7 
+Praktikum 
+20% 
+Konsistensi hands-on tiap pertemuan (rubrik praktik oleh dosen) 
+Final Project 
+50% 
+25% Presentasi + 75% Laporan (dirinci pada Bagian C) 
+TOTAL 
+100% 
+Case Method (10%) + Final Project (50%) = 60% ≥ 50% — aturan 
+terpenuhi 
+ 
+
+=== PAGE 17 ===
+B. Matriks Penilaian Case Method (Tugas Individu) 
+Kriteria Penilaian 
+Bobot 
+Sangat Baik (85-100) 
+Baik (75-84) 
+Cukup (60-74) 
+Kurang (50-60) 
+Sangat Kurang (30-49) 
+Kelengkapan Deliverable 
+Sesuai Target Milestone 
+30% 
+Seluruh item deliverable 
+milestone ada & sesuai 
+spesifikasi minggu tersebut 
+Sebagian besar deliverable 
+ada, 1 item kecil kurang 
+lengkap 
+Hanya sekitar separuh 
+deliverable yang terpenuhi 
+Deliverable minim atau tidak 
+sesuai target milestone 
+Sangat minim 
+Keberhasilan Fungsional 
+(Hasil Benar-Benar 
+Berjalan) 
+30% 
+Berjalan sempurna tanpa error, 
+hasil sesuai ekspektasi 
+(query/pipeline/model/RBAC 
+berfungsi penuh) 
+Berjalan dengan minor issue 
+yang tidak mempengaruhi 
+hasil akhir 
+Berjalan sebagian atau 
+memerlukan workaround 
+manual 
+Tidak berjalan / gagal total 
+mencapai hasil yang diminta 
+Source code tidak selesai 
+Ketepatan Konfigurasi & 
+Kualitas Data/Kode 
+20% 
+Konfigurasi tepat, mengikuti best 
+practice, efisien (mis. partisi rapi, 
+RBAC sesuai role, parameter 
+wajar) 
+Konfigurasi benar, namun 
+ada 1–2 hal yang kurang 
+optimal 
+Ada kesalahan konfigurasi 
+minor yang masih bisa 
+berfungsi 
+Banyak kesalahan konfigurasi 
+yang mengganggu hasil 
+Banyak yang tidak 
+didefinisiakan 
+Bukti/Dokumentasi Hasil 
+Kerja 
+10% 
+Bukti (screenshot/laporan 
+singkat) lengkap, jelas, dan 
+mudah diverifikasi dosen 
+Bukti cukup lengkap, 1–2 
+poin kurang terdokumentasi 
+Bukti minim, sulit 
+memverifikasi sebagian 
+hasil 
+Nyaris tidak ada 
+bukti/dokumentasi hasil kerja 
+Tidak ada 
+Ketepatan Waktu 
+Pengumpulan 
+10% 
+Dikumpulkan tepat waktu sesuai 
+jadwal pertemuan 
+Terlambat < 1 hari dengan 
+alasan yang dapat diterima 
+Terlambat 1–3 hari 
+Terlambat > 3 hari atau tidak 
+dikumpulkan 
+Lebih dari seminggu 
+ 
+Tugas 
+Pertemuan 
+Target Milestone (dinilai dengan form di atas) 
+Tugas Individu 1 
+Pertemuan 4 (sebelum UTS) 
+Dataset Final Project ditentukan & diunggah ke ADLS Gen2 (lapisan Bronze) dengan struktur partisi; query eksploratif awal 
+berjalan di Synapse serverless SQL 
+Tugas Individu 2 
+Pertemuan 7 (sebelum UTS) 
+RBAC/access control diterapkan pada resource Final Project; estimasi & rencana penggunaan kredit Azure tersusun di Cost 
+Management 
+Tugas Individu 3 
+Pertemuan 10 (setelah UTS) 
+Pipeline ingestion + transformasi (ADF/Spark) berjalan; Delta table bersih (lapisan Silver/Gold) dihasilkan 
+Tugas Individu 4 
+Pertemuan 12 (setelah UTS) 
+Minimal satu teknik AI/ML (lengkap API inference) atau dashboard analitik terintegrasi pada dataset Final Project 
+ 
+Nilai Tugas = Σ (bobot kriteria × skor level/4) × 100. Skor akhir Case Method (10% nilai akhir MK) = rata-rata dari 4 Tugas Individu. 
+
+=== PAGE 18 ===
+C. Matriks Penilaian Final Project 
+C.1 Rubrik Presentasi (skala 0–100) 
+Kriteria Penilaian 
+Bobot 
+Sangat Baik (85-100) 
+Baik (75-84) 
+Cukup (60-74) 
+Kurang (0-59) 
+Demo Source Code 
+Berjalan (Live Demo) 
+30% 
+Seluruh source code berhasil 
+dijalankan langsung di depan 
+kelas, mendemonstrasikan tiap 
+tahap arsitektur end-to-end 
+Sebagian besar source code 
+berjalan; 1–2 tahap perlu 
+penjelasan tambahan tanpa demo 
+langsung 
+Sebagian source code berjalan, 
+sebagian ditampilkan sebagai 
+cuplikan/screenshot saja 
+Source code tidak dapat 
+didemokan / gagal berjalan saat 
+presentasi 
+Reproducibility 
+20% 
+Kode & konfigurasi 
+terdokumentasi lengkap 
+(README, requirements, langkah 
+setup) sehingga dapat direplikasi 
+pihak lain tanpa bantuan tim 
+Dokumentasi cukup lengkap, 1–2 
+langkah setup perlu klarifikasi 
+Dokumentasi minim, replikasi 
+memerlukan banyak asumsi 
+Tidak ada dokumentasi setup / 
+tidak dapat direplikasi 
+Kejelasan Penyampaian 
+25% 
+Struktur presentasi runtut, visual 
+pendukung jelas, istilah teknis 
+dijelaskan dengan baik ke audiens 
+Cukup jelas, sedikit bagian terasa 
+terburu-buru atau kurang runtut 
+Penyampaian membingungkan di 
+beberapa bagian penting 
+Penyampaian tidak runtut / sulit 
+diikuti audiens 
+Kekompakan Tim 
+15% 
+Pembagian kerja jelas, seluruh 
+anggota memahami dan mampu 
+menjawab pertanyaan di luar 
+bagiannya sendiri 
+Pembagian kerja jelas, sebagian 
+anggota kurang menguasai bagian 
+lain 
+Pembagian kerja tidak merata, 
+hanya 1–2 anggota yang benar-
+benar menguasai proyek 
+Tidak ada kekompakan, sebagian 
+besar anggota tidak memahami 
+proyek 
+Time Management 
+10% 
+Presentasi selesai sesuai alokasi 
+waktu (15 menit presentasi + 5 
+menit tanya jawab), pembagian 
+waktu antar bagian proporsional 
+Sedikit melebihi/kurang dari 
+alokasi waktu (≤ 2 menit) 
+Melebihi/kurang dari alokasi 
+waktu cukup signifikan (3–5 
+menit) 
+Jauh melebihi/kurang dari alokasi 
+waktu (> 5 menit) atau tidak 
+selesai 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 19 ===
+C.2 Rubrik Implementasi Teknis di Azure (skala 0–100, bobot 30%) 
+Kriteria Penilaian 
+Bobot 
+Sangat Baik (85-100) 
+Baik (80-84) 
+Cukup (79-65) 
+Kurang (0-64) 
+Keberhasilan Source Code 
+Berjalan End-to-End 
+70% 
+Seluruh 10 cakupan arsitektur 
+wajib RPS (ingestion, storage 
+lakehouse, processing, query, 
+ML+API inference+retrain, 
+visualisasi, RBAC+cost, VS Code, 
+CI/CD, MLOps) terbukti berjalan 
+tanpa error saat diverifikasi dosen 
+8–9 dari 10 cakupan arsitektur 
+berjalan baik, 1–2 item ada 
+kendala minor 
+5–7 dari 10 cakupan arsitektur 
+berjalan, sisanya tidak 
+lengkap/gagal 
+Kurang dari 5 cakupan arsitektur 
+yang berhasil diverifikasi berjalan 
+Reproducibility 
+30% 
+Kode & konfigurasi 
+terdokumentasi lengkap 
+(README, requirements, langkah 
+setup) sehingga dapat direplikasi 
+pihak lain tanpa bantuan tim 
+Dokumentasi cukup lengkap, 1–2 
+langkah setup perlu klarifikasi 
+Dokumentasi minim, replikasi 
+memerlukan banyak asumsi 
+Tidak ada dokumentasi setup / 
+tidak dapat direplikasi 
+
+=== PAGE 20 ===
+ 
+C.3 Rubrik Laporan (skala 0–100, template jurnal bebas) 
+Bab 
+Sub-Komponen 
+Bobot 
+Deskripsi Penilaian 
+BAB I Pendahuluan 
+(15%) 
+Latar Belakang 
+3% 
+Konteks masalah dipaparkan jelas & didukung data/fakta yang relevan 
+Urgensi 
+3% 
+Alasan mengapa masalah ini penting diselesaikan sekarang dijelaskan meyakinkan 
+Gap (Kesenjangan) 
+3% 
+Kesenjangan antara kondisi eksisting/penelitian terdahulu dengan yang diusulkan teridentifikasi jelas 
+Research Question (RQ) 
+3% 
+RQ dirumuskan spesifik, terukur, dan menjawab gap yang diidentifikasi (maksimal 3 RQ) 
+Keselarasan 
+3% 
+Latar belakang, urgensi, gap, dan RQ saling terhubung logis (bukan potongan terpisah) 
+BAB II Tinjauan 
+Pustaka (10%) 
+Relevansi & Kekinian Sumber 
+4% 
+Sumber relevan dengan topik dan mayoritas terbit dalam beberapa tahun terakhir 
+Kedalaman Sintesis 
+3% 
+Bukan sekadar daftar rangkuman per sumber, tapi disintesis menjadi benang merah argumen 
+Keterkaitan dengan Gap/RQ 
+3% 
+Tinjauan pustaka secara eksplisit mengarah dan mendukung gap/RQ di BAB I 
+BAB III Metodologi 
+(37%) 
+Arsitektur Modul 
+8% 
+Diagram arsitektur end-to-end lengkap & tiap komponen dijelaskan fungsinya 
+Alur & Penjelasan Tiap Langkah 
+10% 
+Setiap langkah/tahap sesuai arsitektur dijelaskan runtut (input-proses-output tiap tahap jelas) 
+Data 
+6% 
+Sumber data, cara perolehan, volume, dan struktur data dijelaskan lengkap 
+Metode 
+7% 
+Algoritma/pendekatan teknis yang dipakai dijelaskan dengan dasar pemilihan yang masuk akal 
+Konfigurasi/Variabel/Parameter 
+6% 
+Parameter, variabel, dan konfigurasi teknis didokumentasikan presisi (dapat direplikasi) 
+BAB IV Hasil dan 
+Analisis (30%) 
+Penyajian Hasil 
+10% 
+Data, visualisasi/dashboard, dan output ditampilkan lengkap dan mudah dibaca 
+Penjelasan RQ Terjawab 
+10% 
+Setiap RQ dari BAB I dijawab eksplisit dengan bukti hasil yang relevan 
+Analisis Hasil (Insight) 
+10% 
+Interpretasi hasil mendalam — bukan sekadar deskripsi angka, tapi insight & implikasinya 
+BAB V Kesimpulan 
+(5%) 
+Kesimpulan 
+3% 
+Menyimpulkan seluruh RQ secara eksplisit dan konsisten dengan hasil BAB IV 
+Limitasi 
+2% 
+Keterbatasan penelitian/proyek diakui jujur, disertai arah pengembangan lanjutan 
+Referensi (3%) 
+Jumlah & Kualitas Referensi 
+3% 
+Minimal 15 referensi (diutamakan jurnal/paper terindeks kredibel), relevan dan konsisten format sitasinya 
+TOTAL 
+100% 
+Porsi terbesar sengaja dialokasikan pada BAB III Metodologi (37%) dan BAB IV Hasil & Analisis (30%) 
+total 67% dari nilai laporan 
+ 
+
+=== PAGE 21 ===
+ 
+C.4 Perhitungan Nilai Akhir Final Project 
+Komponen 
+Skor (0–100) 
+Bobot 
+Kontribusi 
+Presentasi (Matriks C.1) 
+Nilai_Presentasi 
+25% 
+0,25 × Nilai_Presentasi 
+Implementasi Azure (Matriks C2) 
+Nilai Implementasi 
+40% 
+0,40 x Nilai Implementasi 
+Laporan (Matriks C.3) 
+Nilai_Laporan 
+35% 
+0,75 × Nilai_Laporan 
+Nilai Akhir Final Project 
+Total 
+ 
+
+=== PAGE 22 ===
+MATRIKS PENILAIAN 
+Technology Cloud untuk Big Data dan Data Analytics 
+A. Komposisi Bobot Nilai 
+Komponen 
+Bobot 
+Keterangan 
+Tugas Individu (Case Method) 
+10% 
+Cicilan Final Project, result-oriented, dinilai per milestone (P4, P7, P10, 
+P12) 
+Ujian Tengah Semester (UTS) 
+20% 
+Evaluasi pemahaman konseptual materi Pertemuan 1–7 
+Praktikum 
+20% 
+Konsistensi hands-on tiap pertemuan (rubrik praktik oleh dosen) 
+Final Project 
+50% 
+25% Presentasi + 75% Laporan (dirinci pada Bagian C) 
+TOTAL 
+100% 
+Case Method (10%) + Final Project (50%) = 60% ≥ 50% — aturan 
+terpenuhi 
+ 
+
+=== PAGE 23 ===
+B. Matriks Penilaian Case Method (Tugas Individu) 
+Kriteria Penilaian 
+Bobot 
+Sangat Baik (85-100) 
+Baik (75-84) 
+Cukup (60-74) 
+Kurang (50-60) 
+Sangat Kurang (30-49) 
+Kelengkapan Deliverable 
+Sesuai Target Milestone 
+30% 
+Seluruh item deliverable 
+milestone ada & sesuai 
+spesifikasi minggu tersebut 
+Sebagian besar deliverable 
+ada, 1 item kecil kurang 
+lengkap 
+Hanya sekitar separuh 
+deliverable yang terpenuhi 
+Deliverable minim atau tidak 
+sesuai target milestone 
+Sangat minim 
+Keberhasilan Fungsional 
+(Hasil Benar-Benar 
+Berjalan) 
+30% 
+Berjalan sempurna tanpa error, 
+hasil sesuai ekspektasi 
+(query/pipeline/model/RBAC 
+berfungsi penuh) 
+Berjalan dengan minor issue 
+yang tidak mempengaruhi 
+hasil akhir 
+Berjalan sebagian atau 
+memerlukan workaround 
+manual 
+Tidak berjalan / gagal total 
+mencapai hasil yang diminta 
+Source code tidak selesai 
+Ketepatan Konfigurasi & 
+Kualitas Data/Kode 
+20% 
+Konfigurasi tepat, mengikuti best 
+practice, efisien (mis. partisi rapi, 
+RBAC sesuai role, parameter 
+wajar) 
+Konfigurasi benar, namun 
+ada 1–2 hal yang kurang 
+optimal 
+Ada kesalahan konfigurasi 
+minor yang masih bisa 
+berfungsi 
+Banyak kesalahan konfigurasi 
+yang mengganggu hasil 
+Banyak yang tidak 
+didefinisiakan 
+Bukti/Dokumentasi Hasil 
+Kerja 
+10% 
+Bukti (screenshot/laporan 
+singkat) lengkap, jelas, dan 
+mudah diverifikasi dosen 
+Bukti cukup lengkap, 1–2 
+poin kurang terdokumentasi 
+Bukti minim, sulit 
+memverifikasi sebagian 
+hasil 
+Nyaris tidak ada 
+bukti/dokumentasi hasil kerja 
+Tidak ada 
+Ketepatan Waktu 
+Pengumpulan 
+10% 
+Dikumpulkan tepat waktu sesuai 
+jadwal pertemuan 
+Terlambat < 1 hari dengan 
+alasan yang dapat diterima 
+Terlambat 1–3 hari 
+Terlambat > 3 hari atau tidak 
+dikumpulkan 
+Lebih dari seminggu 
+ 
+Tugas 
+Pertemuan 
+Target Milestone (dinilai dengan form di atas) 
+Tugas Individu 1 
+Pertemuan 4 (sebelum UTS) 
+Dataset Final Project ditentukan & diunggah ke ADLS Gen2 (lapisan Bronze) dengan struktur partisi; query eksploratif awal 
+berjalan di Synapse serverless SQL 
+Tugas Individu 2 
+Pertemuan 7 (sebelum UTS) 
+RBAC/access control diterapkan pada resource Final Project; estimasi & rencana penggunaan kredit Azure tersusun di Cost 
+Management 
+Tugas Individu 3 
+Pertemuan 10 (setelah UTS) 
+Pipeline ingestion + transformasi (ADF/Spark) berjalan; Delta table bersih (lapisan Silver/Gold) dihasilkan 
+Tugas Individu 4 
+Pertemuan 12 (setelah UTS) 
+Minimal satu teknik AI/ML (lengkap API inference) atau dashboard analitik terintegrasi pada dataset Final Project 
+ 
+Nilai Tugas = Σ (bobot kriteria × skor level/4) × 100. Skor akhir Case Method (10% nilai akhir MK) = rata-rata dari 4 Tugas Individu. 
+
+=== PAGE 24 ===
+C. Matriks Penilaian Final Project 
+C.1 Rubrik Presentasi (skala 0–100) 
+Kriteria Penilaian 
+Bobot 
+Sangat Baik (85-100) 
+Baik (75-84) 
+Cukup (60-74) 
+Kurang (0-59) 
+Demo Source Code 
+Berjalan (Live Demo) 
+30% 
+Seluruh source code berhasil 
+dijalankan langsung di depan 
+kelas, mendemonstrasikan tiap 
+tahap arsitektur end-to-end 
+Sebagian besar source code 
+berjalan; 1–2 tahap perlu 
+penjelasan tambahan tanpa demo 
+langsung 
+Sebagian source code berjalan, 
+sebagian ditampilkan sebagai 
+cuplikan/screenshot saja 
+Source code tidak dapat 
+didemokan / gagal berjalan saat 
+presentasi 
+Reproducibility 
+20% 
+Kode & konfigurasi 
+terdokumentasi lengkap 
+(README, requirements, langkah 
+setup) sehingga dapat direplikasi 
+pihak lain tanpa bantuan tim 
+Dokumentasi cukup lengkap, 1–2 
+langkah setup perlu klarifikasi 
+Dokumentasi minim, replikasi 
+memerlukan banyak asumsi 
+Tidak ada dokumentasi setup / 
+tidak dapat direplikasi 
+Kejelasan Penyampaian 
+25% 
+Struktur presentasi runtut, visual 
+pendukung jelas, istilah teknis 
+dijelaskan dengan baik ke audiens 
+Cukup jelas, sedikit bagian terasa 
+terburu-buru atau kurang runtut 
+Penyampaian membingungkan di 
+beberapa bagian penting 
+Penyampaian tidak runtut / sulit 
+diikuti audiens 
+Kekompakan Tim 
+15% 
+Pembagian kerja jelas, seluruh 
+anggota memahami dan mampu 
+menjawab pertanyaan di luar 
+bagiannya sendiri 
+Pembagian kerja jelas, sebagian 
+anggota kurang menguasai bagian 
+lain 
+Pembagian kerja tidak merata, 
+hanya 1–2 anggota yang benar-
+benar menguasai proyek 
+Tidak ada kekompakan, sebagian 
+besar anggota tidak memahami 
+proyek 
+Time Management 
+10% 
+Presentasi selesai sesuai alokasi 
+waktu (15 menit presentasi + 5 
+menit tanya jawab), pembagian 
+waktu antar bagian proporsional 
+Sedikit melebihi/kurang dari 
+alokasi waktu (≤ 2 menit) 
+Melebihi/kurang dari alokasi 
+waktu cukup signifikan (3–5 
+menit) 
+Jauh melebihi/kurang dari alokasi 
+waktu (> 5 menit) atau tidak 
+selesai 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=== PAGE 25 ===
+C.2 Rubrik Implementasi Teknis di Azure (skala 0–100, bobot 30%) 
+Kriteria Penilaian 
+Bobot 
+Sangat Baik (85-100) 
+Baik (80-84) 
+Cukup (79-65) 
+Kurang (0-64) 
+Keberhasilan Source Code 
+Berjalan End-to-End 
+70% 
+Seluruh 10 cakupan arsitektur 
+wajib RPS (ingestion, storage 
+lakehouse, processing, query, 
+ML+API inference+retrain, 
+visualisasi, RBAC+cost, VS Code, 
+CI/CD, MLOps) terbukti berjalan 
+tanpa error saat diverifikasi dosen 
+8–9 dari 10 cakupan arsitektur 
+berjalan baik, 1–2 item ada 
+kendala minor 
+5–7 dari 10 cakupan arsitektur 
+berjalan, sisanya tidak 
+lengkap/gagal 
+Kurang dari 5 cakupan arsitektur 
+yang berhasil diverifikasi berjalan 
+Reproducibility 
+30% 
+Kode & konfigurasi 
+terdokumentasi lengkap 
+(README, requirements, langkah 
+setup) sehingga dapat direplikasi 
+pihak lain tanpa bantuan tim 
+Dokumentasi cukup lengkap, 1–2 
+langkah setup perlu klarifikasi 
+Dokumentasi minim, replikasi 
+memerlukan banyak asumsi 
+Tidak ada dokumentasi setup / 
+tidak dapat direplikasi 
+
+=== PAGE 26 ===
+ 
+C.3 Rubrik Laporan (skala 0–100, template jurnal bebas) 
+Bab 
+Sub-Komponen 
+Bobot 
+Deskripsi Penilaian 
+BAB I Pendahuluan 
+(15%) 
+Latar Belakang 
+3% 
+Konteks masalah dipaparkan jelas & didukung data/fakta yang relevan 
+Urgensi 
+3% 
+Alasan mengapa masalah ini penting diselesaikan sekarang dijelaskan meyakinkan 
+Gap (Kesenjangan) 
+3% 
+Kesenjangan antara kondisi eksisting/penelitian terdahulu dengan yang diusulkan teridentifikasi jelas 
+Research Question (RQ) 
+3% 
+RQ dirumuskan spesifik, terukur, dan menjawab gap yang diidentifikasi (maksimal 3 RQ) 
+Keselarasan 
+3% 
+Latar belakang, urgensi, gap, dan RQ saling terhubung logis (bukan potongan terpisah) 
+BAB II Tinjauan 
+Pustaka (10%) 
+Relevansi & Kekinian Sumber 
+4% 
+Sumber relevan dengan topik dan mayoritas terbit dalam beberapa tahun terakhir 
+Kedalaman Sintesis 
+3% 
+Bukan sekadar daftar rangkuman per sumber, tapi disintesis menjadi benang merah argumen 
+Keterkaitan dengan Gap/RQ 
+3% 
+Tinjauan pustaka secara eksplisit mengarah dan mendukung gap/RQ di BAB I 
+BAB III Metodologi 
+(37%) 
+Arsitektur Modul 
+8% 
+Diagram arsitektur end-to-end lengkap & tiap komponen dijelaskan fungsinya 
+Alur & Penjelasan Tiap Langkah 
+10% 
+Setiap langkah/tahap sesuai arsitektur dijelaskan runtut (input-proses-output tiap tahap jelas) 
+Data 
+6% 
+Sumber data, cara perolehan, volume, dan struktur data dijelaskan lengkap 
+Metode 
+7% 
+Algoritma/pendekatan teknis yang dipakai dijelaskan dengan dasar pemilihan yang masuk akal 
+Konfigurasi/Variabel/Parameter 
+6% 
+Parameter, variabel, dan konfigurasi teknis didokumentasikan presisi (dapat direplikasi) 
+BAB IV Hasil dan 
+Analisis (30%) 
+Penyajian Hasil 
+10% 
+Data, visualisasi/dashboard, dan output ditampilkan lengkap dan mudah dibaca 
+Penjelasan RQ Terjawab 
+10% 
+Setiap RQ dari BAB I dijawab eksplisit dengan bukti hasil yang relevan 
+Analisis Hasil (Insight) 
+10% 
+Interpretasi hasil mendalam — bukan sekadar deskripsi angka, tapi insight & implikasinya 
+BAB V Kesimpulan 
+(5%) 
+Kesimpulan 
+3% 
+Menyimpulkan seluruh RQ secara eksplisit dan konsisten dengan hasil BAB IV 
+Limitasi 
+2% 
+Keterbatasan penelitian/proyek diakui jujur, disertai arah pengembangan lanjutan 
+Referensi (3%) 
+Jumlah & Kualitas Referensi 
+3% 
+Minimal 15 referensi (diutamakan jurnal/paper terindeks kredibel), relevan dan konsisten format sitasinya 
+TOTAL 
+100% 
+Porsi terbesar sengaja dialokasikan pada BAB III Metodologi (37%) dan BAB IV Hasil & Analisis (30%) 
+total 67% dari nilai laporan 
+ 
+
+=== PAGE 27 ===
+ 
+C.4 Perhitungan Nilai Akhir Final Project 
+Komponen 
+Skor (0–100) 
+Bobot 
+Kontribusi 
+Presentasi (Matriks C.1) 
+Nilai_Presentasi 
+25% 
+0,25 × Nilai_Presentasi 
+Implementasi Azure (Matriks C2) 
+Nilai Implementasi 
+40% 
+0,40 x Nilai Implementasi 
+Laporan (Matriks C.3) 
+Nilai_Laporan 
+35% 
+0,75 × Nilai_Laporan 
+Nilai Akhir Final Project 
+Total 
+ 

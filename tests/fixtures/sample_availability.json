@@ -1,0 +1,11 @@
+{
+  "api_info": {"status": "healthy"},
+  "items": [{
+    "timestamp": "2026-10-01T08:00:00+08:00",
+    "carpark_data": [
+      {"carpark_number": "HLM", "update_datetime": "2026-10-01T07:59:00", "carpark_info": [{"lot_type": "C", "total_lots": "100", "lots_available": "40"}, {"lot_type": "Y", "total_lots": "30", "lots_available": "20"}]},
+      {"carpark_number": "STALE", "update_datetime": "2026-10-01T07:20:00", "carpark_info": [{"lot_type": "C", "total_lots": "200", "lots_available": "100"}]},
+      {"carpark_number": "INVALID", "update_datetime": "2026-10-01T07:59:00", "carpark_info": [{"lot_type": "C", "total_lots": "0", "lots_available": "0"}]}
+    ]
+  }]
+}
