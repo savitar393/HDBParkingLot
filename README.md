@@ -3,8 +3,8 @@
 Aplikasi dashboard analitik yang memprediksi ketersediaan parkir di HDB Singapore
 
 ## Host requirements
-- Windows 11 with WSL2 + Docker Desktop **or** an Ubuntu machine with Docker Engine and the Compose plugin.
-- Recommended: 8 GB RAM minimum, 12–16 GB preferable; ~5 GB of free disk for the development image/dependencies. Docker is used for reproducibility, **not** Kubernetes.
+- Docker Engine and the Compose plugin.
+- Recommended: 8 GB RAM minimum, 12–16 GB preferable; ~5 GB of free disk for the development image/dependencies. 
 - Internet access from the container to `api.data.gov.sg`, `data.gov.sg`, PyPI, and Maven repositories.
 
 ## PowerShell setup
@@ -58,8 +58,8 @@ data/
   silver/
     carpark_availability_delta/_delta_log/...
     carpark_availability_parquet/part-*.parquet
-  gold/                   # future feature engineering & prediction tables
-models/                   # future versioned model artifacts
+  gold/
+models/
 ```
 
 ## Notes
