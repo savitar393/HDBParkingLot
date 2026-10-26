@@ -1,4 +1,3 @@
-"""Safe, repeatable command line entrypoints for Phase 1."""
 from __future__ import annotations
 
 import argparse
@@ -10,7 +9,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 from hdb_parking.bronze import snapshot_path, write_snapshot
-from hdb_parking.client import fetch_availability, fetch_metadata_page, make_session
+from hdb_parking.client import EmptyAvailabilityError, fetch_availability, fetch_metadata_page, make_session
 from hdb_parking.records import SGT, parse_snapshot
 
 
@@ -29,24 +28,48 @@ def run_backfill(args: argparse.Namespace) -> None:
     root = get_data_root(args.data_dir)
     start = parse_local_sgt(args.start)
     session = make_session()
-    saved = skipped = 0
+    saved = skipped = missing = consecutive_missing = 0
+    missing_file = root / "quality" / "missing_snapshots.csv"
     for index in range(args.hours):
         when = start + timedelta(hours=index)
         path = snapshot_path(root, when)
         if path.exists():
             skipped += 1
-            print(f"SKIP existing {path}")
+            consecutive_missing = 0
+            print(f"SKIP existing {path}", flush=True)
             continue
         if args.dry_run:
             print(f"DRY RUN GET date_time={when.strftime('%Y-%m-%dT%H:%M:%S')} -> {path}")
             continue
-        doc = fetch_availability(session, when)
-        _, created = write_snapshot(root, when, doc)
-        saved += int(created)
-        print(f"SAVED {when.isoformat()} ({len(doc['items'][0].get('carpark_data', []))} carparks)")
+        try:
+            doc = fetch_availability(session, when)
+        except EmptyAvailabilityError as exc:
+            missing += 1
+            consecutive_missing += 1
+            missing_file.parent.mkdir(parents=True, exist_ok=True)
+            new_file = not missing_file.exists() or missing_file.stat().st_size == 0
+            with missing_file.open("a", encoding="utf-8", newline="") as fp:
+                writer = csv.writer(fp)
+                if new_file:
+                    writer.writerow(["requested_at_sgt", "problem"])
+                writer.writerow([when.isoformat(), str(exc)])
+            print(f"WARNING: {exc} (logged: {missing_file})", flush=True)
+            if consecutive_missing >= args.max_consecutive_empty:
+                raise SystemExit(
+                    f"Stopped after {consecutive_missing} consecutive empty API responses. "
+                    "Run `python scripts/probe_availability.py` to compare dates and current data. "
+                    "No values were fabricated for missing hours."
+                ) from exc
+        else:
+            consecutive_missing = 0
+            _, created = write_snapshot(root, when, doc)
+            saved += int(created)
+            print(f"SAVED {when.isoformat()} ({len(doc['items'][0].get('carpark_data', []))} carparks)", flush=True)
         if index + 1 < args.hours:
             time.sleep(args.delay)
-    print(f"Completed: saved={saved}, already_present={skipped}, requested={args.hours}")
+    print(f"Completed: saved={saved}, already_present={skipped}, empty_hours={missing}, requested={args.hours}")
+    if not args.dry_run and saved == 0 and skipped == 0:
+        raise SystemExit("No availability snapshots were obtained. Inspect API probe output before Silver ETL.")
 
 
 def run_current(args: argparse.Namespace) -> None:
@@ -115,6 +138,7 @@ def main() -> None:
     backfill.add_argument("--hours", type=int, default=24, choices=range(1, 2001), metavar="N")
     backfill.add_argument("--delay", type=float, default=2.0)
     backfill.add_argument("--dry-run", action="store_true")
+    backfill.add_argument("--max-consecutive-empty", type=int, default=3, help="Stop after N empty API responses in a row (default 3)")
     subs.add_parser("current", help="Fetch and store one latest snapshot")
     meta = subs.add_parser("metadata", help="Fetch paginated HDB metadata")
     meta.add_argument("--page-size", type=int, default=500)

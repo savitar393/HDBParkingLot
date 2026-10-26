@@ -1,4 +1,3 @@
-"""Source API access; no Azure or local filesystem concerns."""
 from __future__ import annotations
 
 import os
@@ -11,6 +10,10 @@ from urllib3.util.retry import Retry
 AVAILABILITY_URL = "https://api.data.gov.sg/v1/transport/carpark-availability"
 METADATA_URL = "https://data.gov.sg/api/action/datastore_search"
 METADATA_DATASET_ID = "d_23f946fa557947f93a8043bbef41dd09"
+
+
+class EmptyAvailabilityError(ValueError):
+    """A successful HTTP response contained no historical availability items."""
 
 
 def make_session() -> requests.Session:
@@ -33,15 +36,20 @@ def make_session() -> requests.Session:
 
 
 def fetch_availability(session: requests.Session, when_sgt: datetime | None = None) -> dict:
-    """For historical queries, send local Singapore time, not UTC or a timezone suffix."""
-    params = {"date_time": when_sgt.strftime("%Y-%m-%dT%H:%M:%S")} if when_sgt else None
+    """Historical queries use Singapore local time, without a timezone suffix."""
+    requested = when_sgt.strftime("%Y-%m-%dT%H:%M:%S") if when_sgt else None
+    params = {"date_time": requested} if requested else None
     response = session.get(AVAILABILITY_URL, params=params, timeout=35)
     response.raise_for_status()
     body = response.json()
     if not isinstance(body, dict) or not isinstance(body.get("items"), list):
-        raise ValueError("Unexpected availability response: missing items[]")
+        raise ValueError(f"Unexpected availability response (date_time={requested or 'current'}): missing items[]")
     if not body["items"]:
-        raise ValueError("Availability response items[] is empty")
+        info = body.get("api_info")
+        raise EmptyAvailabilityError(
+            f"Availability items[] empty for date_time={requested or 'current'}; "
+            f"api_info={str(info)[:240]}"
+        )
     return body
 
 
