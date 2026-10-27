@@ -33,7 +33,7 @@ def test_empty_has_context():
 
 def _args(tmp_path, hours=3, max_consecutive_empty=3):
     return Namespace(data_dir=str(tmp_path), start="2026-10-01T00:00:00", hours=hours,
-                     delay=0, dry_run=False, max_consecutive_empty=max_consecutive_empty)
+                     delay=0, dry_run=False, max_consecutive_empty=max_consecutive_empty, empty_retry_minutes=0)
 
 
 def test_one_missing_hour_does_not_erase_valid_hours(tmp_path, monkeypatch):
