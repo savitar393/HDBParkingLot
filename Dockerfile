@@ -4,5 +4,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends openjdk-17-jre-
 WORKDIR /workspace
 COPY pyproject.toml README.md ./
 COPY src/ ./src/
-RUN pip install --no-cache-dir -e '.[dev,spark,analytics]'
+RUN pip install --no-cache-dir -e '.[dev,spark,analytics,ml]'
 CMD ["bash"]

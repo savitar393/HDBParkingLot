@@ -13,6 +13,7 @@ dependencies = ["requests>=2.32,<3", "urllib3>=2,<3"]
 dev = ["pytest>=8,<10", "ruff>=0.8,<1"]
 spark = ["pyspark==3.5.9", "delta-spark==3.3.2"]
 analytics = ["duckdb>=1.2,<2"]
+ml = ["numpy>=1.26,<3", "pandas>=2.2,<3", "scikit-learn>=1.5,<1.9", "joblib>=1.4,<2"]
 
 [project.scripts]
 hdb = "hdb_parking.cli:main"
