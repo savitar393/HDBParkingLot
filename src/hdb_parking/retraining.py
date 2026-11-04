@@ -1,8 +1,3 @@
-"""Reusable safeguards for HDB hourly retraining and historical replay.
-
-All time values passed here are UTC-naive *instant* timestamps because the
-current Gold Parquet is read that way by DuckDB. They are not SGT wall times.
-"""
 from __future__ import annotations
 
 from dataclasses import dataclass

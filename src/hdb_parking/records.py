@@ -1,4 +1,3 @@
-"""Pure-Python data-contract validation used by tests and ingestion QA."""
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone

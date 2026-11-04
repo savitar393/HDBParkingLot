@@ -1,4 +1,3 @@
-"""Portable local Bronze storage, using the same partition contract as ADLS."""
 from __future__ import annotations
 
 import json

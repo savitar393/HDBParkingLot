@@ -1,8 +1,3 @@
-"""On-prem MLOps checkpoint: one safe retraining and conditional promotion.
-
-Historical replay is intentional: never conflate a replayed event with a real
-scheduled run or a currently fresh source. Later a scheduler will call this.
-"""
 from __future__ import annotations
 
 import argparse
